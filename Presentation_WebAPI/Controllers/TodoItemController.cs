@@ -1,6 +1,8 @@
-﻿using Presentation_WebAPI.Models;
+﻿using Common;
+using Presentation_WebAPI.Models;
 using Presentation_WebAPI.TodoItemServiceReference;
 using Presentation_WebAPI.Utils;
+using Presentation_WebAPI.Utils.DataTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -121,6 +123,19 @@ namespace Presentation_WebAPI.Controllers
             var itens = filteredItens.Select(todoItemDto => MVCModelToDTOUtil.ToTodoItemModelMap(todoItemDto)).ToList();
             return Ok(itens);
         }
+
+        #region datatableMethod
+        [Route("api/TodoItem/GetDataTable/")]
+        [HttpGet]
+        public jQueryDataTableData<TodoItemModel> GetDataTable([FromUri]jQueryDataTableParamModel param)
+        {
+            ContainerDTO<TodoItemDTO> todoItemContainerDto = todoItemServiceClient.findAllPaged(param.start, param.length);
+            List<TodoItemModel> data = todoItemContainerDto.list.Select(todoItemDto => MVCModelToDTOUtil.ToTodoItemModelMap(todoItemDto)).ToList();
+            jQueryDataTableData<TodoItemModel> dataTableresponse = new jQueryDataTableData<TodoItemModel>(param.draw, todoItemContainerDto.total, data);
+            return dataTableresponse;
+        }
+        #endregion
+
         #endregion
     }
 }

@@ -9,181 +9,41 @@
 //------------------------------------------------------------------------------
 
 namespace Presentation_WebAPI.TodoItemServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TodoItemDTO", Namespace="http://schemas.datacontract.org/2004/07/Common")]
-    [System.SerializableAttribute()]
-    public partial class TodoItemDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsCompleteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsComplete {
-            get {
-                return this.IsCompleteField;
-            }
-            set {
-                if ((this.IsCompleteField.Equals(value) != true)) {
-                    this.IsCompleteField = value;
-                    this.RaisePropertyChanged("IsComplete");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ContainerDTOOfTodoItemDTOKmbgGhhj", Namespace="http://schemas.datacontract.org/2004/07/Common")]
-    [System.SerializableAttribute()]
-    public partial class ContainerDTOOfTodoItemDTOKmbgGhhj : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO[] listField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int totalField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO[] list {
-            get {
-                return this.listField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.listField, value) != true)) {
-                    this.listField = value;
-                    this.RaisePropertyChanged("list");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int total {
-            get {
-                return this.totalField;
-            }
-            set {
-                if ((this.totalField.Equals(value) != true)) {
-                    this.totalField = value;
-                    this.RaisePropertyChanged("total");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TodoItemServiceReference.ITodoItemService")]
     public interface ITodoItemService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/findAll", ReplyAction="http://tempuri.org/ITodoItemService/findAllResponse")]
-        Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO[] findAll();
+        Common.TodoItemDTO[] findAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/findAll", ReplyAction="http://tempuri.org/ITodoItemService/findAllResponse")]
-        System.Threading.Tasks.Task<Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO[]> findAllAsync();
+        System.Threading.Tasks.Task<Common.TodoItemDTO[]> findAllAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/findAllPaged", ReplyAction="http://tempuri.org/ITodoItemService/findAllPagedResponse")]
-        Presentation_WebAPI.TodoItemServiceReference.ContainerDTOOfTodoItemDTOKmbgGhhj findAllPaged(int start, int length);
+        Common.ContainerDTO<Common.TodoItemDTO> findAllPaged(int start, int length);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/findAllPaged", ReplyAction="http://tempuri.org/ITodoItemService/findAllPagedResponse")]
-        System.Threading.Tasks.Task<Presentation_WebAPI.TodoItemServiceReference.ContainerDTOOfTodoItemDTOKmbgGhhj> findAllPagedAsync(int start, int length);
+        System.Threading.Tasks.Task<Common.ContainerDTO<Common.TodoItemDTO>> findAllPagedAsync(int start, int length);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/findById", ReplyAction="http://tempuri.org/ITodoItemService/findByIdResponse")]
-        Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO findById(long id);
+        Common.TodoItemDTO findById(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/findById", ReplyAction="http://tempuri.org/ITodoItemService/findByIdResponse")]
-        System.Threading.Tasks.Task<Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO> findByIdAsync(long id);
+        System.Threading.Tasks.Task<Common.TodoItemDTO> findByIdAsync(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/create", ReplyAction="http://tempuri.org/ITodoItemService/createResponse")]
-        bool create(Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO todoItem);
+        bool create(Common.TodoItemDTO todoItem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/create", ReplyAction="http://tempuri.org/ITodoItemService/createResponse")]
-        System.Threading.Tasks.Task<bool> createAsync(Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO todoItem);
+        System.Threading.Tasks.Task<bool> createAsync(Common.TodoItemDTO todoItem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/update", ReplyAction="http://tempuri.org/ITodoItemService/updateResponse")]
-        bool update(Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO todoItem);
+        bool update(Common.TodoItemDTO todoItem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/update", ReplyAction="http://tempuri.org/ITodoItemService/updateResponse")]
-        System.Threading.Tasks.Task<bool> updateAsync(Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO todoItem);
+        System.Threading.Tasks.Task<bool> updateAsync(Common.TodoItemDTO todoItem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITodoItemService/delete", ReplyAction="http://tempuri.org/ITodoItemService/deleteResponse")]
         bool delete(long id);
@@ -219,43 +79,43 @@ namespace Presentation_WebAPI.TodoItemServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO[] findAll() {
+        public Common.TodoItemDTO[] findAll() {
             return base.Channel.findAll();
         }
         
-        public System.Threading.Tasks.Task<Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO[]> findAllAsync() {
+        public System.Threading.Tasks.Task<Common.TodoItemDTO[]> findAllAsync() {
             return base.Channel.findAllAsync();
         }
         
-        public Presentation_WebAPI.TodoItemServiceReference.ContainerDTOOfTodoItemDTOKmbgGhhj findAllPaged(int start, int length) {
+        public Common.ContainerDTO<Common.TodoItemDTO> findAllPaged(int start, int length) {
             return base.Channel.findAllPaged(start, length);
         }
         
-        public System.Threading.Tasks.Task<Presentation_WebAPI.TodoItemServiceReference.ContainerDTOOfTodoItemDTOKmbgGhhj> findAllPagedAsync(int start, int length) {
+        public System.Threading.Tasks.Task<Common.ContainerDTO<Common.TodoItemDTO>> findAllPagedAsync(int start, int length) {
             return base.Channel.findAllPagedAsync(start, length);
         }
         
-        public Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO findById(long id) {
+        public Common.TodoItemDTO findById(long id) {
             return base.Channel.findById(id);
         }
         
-        public System.Threading.Tasks.Task<Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO> findByIdAsync(long id) {
+        public System.Threading.Tasks.Task<Common.TodoItemDTO> findByIdAsync(long id) {
             return base.Channel.findByIdAsync(id);
         }
         
-        public bool create(Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO todoItem) {
+        public bool create(Common.TodoItemDTO todoItem) {
             return base.Channel.create(todoItem);
         }
         
-        public System.Threading.Tasks.Task<bool> createAsync(Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO todoItem) {
+        public System.Threading.Tasks.Task<bool> createAsync(Common.TodoItemDTO todoItem) {
             return base.Channel.createAsync(todoItem);
         }
         
-        public bool update(Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO todoItem) {
+        public bool update(Common.TodoItemDTO todoItem) {
             return base.Channel.update(todoItem);
         }
         
-        public System.Threading.Tasks.Task<bool> updateAsync(Presentation_WebAPI.TodoItemServiceReference.TodoItemDTO todoItem) {
+        public System.Threading.Tasks.Task<bool> updateAsync(Common.TodoItemDTO todoItem) {
             return base.Channel.updateAsync(todoItem);
         }
         
