@@ -12,7 +12,12 @@ namespace Presentation_WebAPI.Controllers
 {
     public class TodoItemController : ApiController
     {
-        private TodoItemServiceClient todoItemServiceClient = new TodoItemServiceClient();
+        private readonly ITodoItemService todoItemServiceClient;
+
+        public TodoItemController(ITodoItemService todoItemServiceClient)
+        {
+            this.todoItemServiceClient = todoItemServiceClient;
+        }
 
         // GET api/<controller>
         public IEnumerable<TodoItemModel> Get()
