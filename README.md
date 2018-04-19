@@ -1,7 +1,7 @@
 # C# ASP.NET Web API - Proof of Concept project
 
 ## Purpose
-> To create an solution on Visual Studio to run a simple CRUD web application using:
+> To create a solution on Visual Studio to run a simple CRUD web application using:
  * Multitier architecture:
    * Data layer (Entity Framework)
    * Business layer
@@ -11,8 +11,8 @@
  * [Test-Driven Development (TDD)](#unit-test) with an example of Unit Test project for the presentation layer
 
 ## Solution Structure and Layer Division
-> After creating the projects and setting their dependencies,
-![](https://github.com/rembertmagri/web_csharp/blob/master/images/architecture%20code%20map.png?raw=true)
+> After creating the projects and setting their dependencies, the code map for the solution is:
+![](https://github.com/rembertmagri/web_api/blob/master/images/architecture%20code%20map.png?raw=true)
 
 ## Web API
 > Text
