@@ -59,6 +59,9 @@ namespace Presentation_WebAPI.Tests.Controllers
             // Assert
             Assert.IsNotNull(result.Content);
             Assert.AreEqual("Test", result.Content.Name);
+
+            // Teardown
+            controller.Delete(1);
         }
 
         [TestMethod]
@@ -78,6 +81,9 @@ namespace Presentation_WebAPI.Tests.Controllers
             // Assert
             Assert.IsNotNull(result.Content);
             Assert.AreEqual("Test", result.Content.Name);
+
+            // Teardown
+            controller.Delete(1);
         }
 
         [TestMethod]
@@ -103,6 +109,9 @@ namespace Presentation_WebAPI.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.NoContent, result.StatusCode);
+
+            // Teardown
+            controller.Delete(1);
         }
 
         [TestMethod]
