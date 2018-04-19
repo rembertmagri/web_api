@@ -105,6 +105,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{FD6BF57A-2923-4163-AF05-8F08AE03080D}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Presentation_WebAPI\Presentation_WebAPI.csproj">
       <Project>{AD2B7AB4-08FD-4F9F-B02C-76EFC291F2CB}</Project>
       <Name>Presentation_WebAPI</Name>

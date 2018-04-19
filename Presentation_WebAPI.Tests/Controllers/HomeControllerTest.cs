@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Presentation_WebAPI;
 using Presentation_WebAPI.Controllers;
+using Presentation_WebAPI.Tests.MockServices;
 
 namespace Presentation_WebAPI.Tests.Controllers
 {
@@ -12,7 +13,7 @@ namespace Presentation_WebAPI.Tests.Controllers
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = new HomeController(new MockTodoItemService());
 
             // Act
             ViewResult result = controller.Index() as ViewResult;

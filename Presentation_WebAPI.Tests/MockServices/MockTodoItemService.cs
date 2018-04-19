@@ -1,4 +1,5 @@
-﻿using Presentation_WebAPI.TodoItemServiceReference;
+﻿using Common;
+using Presentation_WebAPI.TodoItemServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,12 @@ namespace Presentation_WebAPI.Tests.MockServices
             throw new NotImplementedException();
         }
 
-        public ContainerDTOOfTodoItemDTOKmbgGhhj findAllPaged(int start, int length)
+        public ContainerDTO<TodoItemDTO> findAllPaged(int start, int length)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ContainerDTOOfTodoItemDTOKmbgGhhj> findAllPagedAsync(int start, int length)
+        public Task<ContainerDTO<TodoItemDTO>> findAllPagedAsync(int start, int length)
         {
             throw new NotImplementedException();
         }
