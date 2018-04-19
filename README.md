@@ -83,4 +83,4 @@ Useful references:
 
 ## Conclusion
 
-This project demonstrated the differences when using MVC only to develop the presentation layer of a web application and when using some of the most popular javascript libraries, such as jQuery with Datatables and AngularJS. Additionally, some of the most common practices used in software development departments today were showcased, such as unit tests and dependency injection.
+This project demonstrated the usage of Web API and MVC working together as the Presentation layer of a multi-layered solution that was composed of a WCF service layer, a business layer and a Entity Framework based data access layer. Additionally, some of the most common practices used in software development departments today were showcased, such as unit tests and dependency injection.
