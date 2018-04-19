@@ -66,7 +66,7 @@ namespace Presentation_WebAPI.Controllers
 
             if (result)
             {
-                return Ok();
+                return StatusCode(HttpStatusCode.NoContent);
             }
             return InternalServerError();
         }
@@ -78,7 +78,7 @@ namespace Presentation_WebAPI.Controllers
 
             if (result)
             {
-                return Ok();
+                return StatusCode(HttpStatusCode.NoContent);
             }
             return InternalServerError();
         }
